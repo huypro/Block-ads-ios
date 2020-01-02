@@ -1,29 +1,11 @@
-
+// edit by Thích Sốt Về Đêm - GocMod Team
+// Website: www.GocMod.Com
 var noadsver = "$Id: no-ads.pac,v 5.125 2015/07/07 15:14:14 loverso Exp loverso $";
-
-
 var normal = "DIRECT";
-
-
 // *** BHP for Windows, you need to change the "0.0.0.0" to "127.0.0.1"
-
-
 var blackhole = "PROXY 8.8.8.8:53";
-
-
-
-
 var localproxy = normal;
-
-
 var bypass = normal;
-
-
-// matches several common URL paths for ad images:
-// such as: /banner/ /..._banner/ /banner_...
-// but matches several words and includes plurals
-// and catch .../!ad...
-
 var re_banner = /\/(.*_){0,1}(ad|advert|adverts?|adimage|adframe|adserver|admentor|adview|banner|bannerimg|popup|popunder)(s)?[_.\/]/i;
 var re_banner = /(\b|[_0-9])(ad|advert(ising)?|adimage|adframe|adserv|admentor|adview|banner|popup|popunder)s?(\b|[_0-9])/i;
 var re_banner = /(\b|[_])(ad|advert(ising)?|adimage|adframe|adserv|admentor|adview|banner|popup|popunder)s?(\b|[_0-9])/i;
@@ -35,26 +17,14 @@ var re_banner_white = /(load|feature=banner|upload_popup|popupplayer|popupmenu\.
 
 // try to not block guids containing '...-ad...'
 var re_banner2 = /[/](?!no-ads)([^/]*?([^0-9/][^-/]))?(\b|[_])(ad[s]?)(\b|[_0-9])/i;
-
-
-// matches host/domain names starting with "ad" but not (admin|add|adsl)
-// or any hostname starting with "pop", "clicks", and "cash"
-// or any hostname containing "banner"
-// ^(ad(s)?.{0,4}\.|pop|click|cash|[^.]*banner|[^.]*adserv)
-// ^(ad(?!(min|sl|d\.))|pop|click|cash|[^.]*banner|[^.]*adserv)
-// ^(ad(?!(min|sl|d\.))|pop|click|cash|[^.]*banner|[^.]*adserv|.*\.ads\.)
-// ^(www\.)?(ad(?!(mission|visor|alur|iumx|ult|obe.*|min|sl|d|olly.*))|tology|pop|click(?!redblue)|cash|[^.]*banner|[^.]*adserv|.+\.ads?\.)
-//var re_adhost = /.../i;
 var re_adhost = /^(ad(s)?.{0,4}\.|pop|click|cash|[^.]*banner|[^.]*adserv)/i;
 var re_adhost = /^(ad(?!(min|sl|d\.))|pop|click|cash|[^.]*banner|[^.]*adserv)/i;
 var re_adhost = /^(ad(?!(min|sl|d\.))|pop|click|cash|[^.]*banner|[^.]*adserv|.*\.ads\.)/i;
 var re_adhost = /^(www\.)?(ad(?!(mission|visor|alur|iumx|ult|obe.*|min|sl|d|olly.*))|tology|pop|click(?!redblue)|cash|[^.]*banner|[^.]*adserv|.+\.ads?\.)/i;
 var re_adhost = /\b((new)?ad(?!(venture|vantage|am|mission|visor|alur|iumx|ult|vizia|obe|min|sl|d|olly|vance))|ads\b|adserv|pop(?!ular|corn|e)|click(?!redblue|andbuy|.reference)|cash(?!back)|banner|bans)/i;
-
 // http://www.afcyhf.com/image-1742473-10472361
 // http://www.tkqlhce.com/image-1742473-10510557
 var re_crud = /www\.\w+\.com\/image-\d+-\d+$/;
-
 // neg:
 //	admin.foobar.com
 //	add.iahoo.com
@@ -69,11 +39,6 @@ var re_crud = /www\.\w+\.com\/image-\d+-\d+$/;
 
 // matched against hostname
 var re_whitelist_domains = /(^|\.)(adorama\.com|adafruit\..*|advogato\.org|adirondack\..*|kintera\.org|sprintpcs\.com|adp\.com|lego\.com|dell\.com|mozdev\.org|mozilla\.org|fidelity\.com|tirerack\.com|titantv\.com|lala\.com|sprint\.com|nextel\.com|verizon\.com|vupload\.facebook\.com|rit\.edu|mididb\.com|sony\.tv|market\.android\.com|weeklyad\.staples\.com|(code|plus|www|mail|apis|drive|docs)\.google\.com|googleadservices\.com|gmail\.com|gstatic\.com|thetvdb\.com|bits\te.wikimedia\.org|css\.slickdealscdn\.com|newegg\.com|androiddrawer\.com|addons\.cdn\.mozilla\.net|wsj\.com|massdrop\.com|cloudfront\.net|ad.*\.rackcdn\.com|bankofamerica.com)$/i;
-// http://adc8aa2d5893f5ce5bf9-b0fbfd775b6f5cda8694c34759b81cf5.r65.cf2.rackcdn.com/39060.png
-
-
-
-///////////////////////////////////////////////////////////////////////////////
 
 var isActive = 1;
 
