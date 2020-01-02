@@ -45,7 +45,10 @@ var re_banner2 = /[/](?!no-ads)([^/]*?([^0-9/][^-/]))?(\b|[_])(ad[s]?)(\b|[_0-9]
 // ^(ad(?!(min|sl|d\.))|pop|click|cash|[^.]*banner|[^.]*adserv|.*\.ads\.)
 // ^(www\.)?(ad(?!(mission|visor|alur|iumx|ult|obe.*|min|sl|d|olly.*))|tology|pop|click(?!redblue)|cash|[^.]*banner|[^.]*adserv|.+\.ads?\.)
 //var re_adhost = /.../i;
-
+var re_adhost = /^(ad(s)?.{0,4}\.|pop|click|cash|[^.]*banner|[^.]*adserv)/i;
+var re_adhost = /^(ad(?!(min|sl|d\.))|pop|click|cash|[^.]*banner|[^.]*adserv)/i;
+var re_adhost = /^(ad(?!(min|sl|d\.))|pop|click|cash|[^.]*banner|[^.]*adserv|.*\.ads\.)/i;
+var re_adhost = /^(www\.)?(ad(?!(mission|visor|alur|iumx|ult|obe.*|min|sl|d|olly.*))|tology|pop|click(?!redblue)|cash|[^.]*banner|[^.]*adserv|.+\.ads?\.)/i;
 var re_adhost = /\b((new)?ad(?!(venture|vantage|am|mission|visor|alur|iumx|ult|vizia|obe|min|sl|d|olly|vance))|ads\b|adserv|pop(?!ular|corn|e)|click(?!redblue|andbuy|.reference)|cash(?!back)|banner|bans)/i;
 
 // http://www.afcyhf.com/image-1742473-10472361
